@@ -20,7 +20,7 @@ namespace StormLibSharp.Native
         #region Functions for archive manipulation
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileOpenArchive(
-            [MarshalAs(UnmanagedType.LPTStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             uint dwPriority,
             SFileOpenArchiveFlags dwFlags,
             out MpqArchiveSafeHandle phMpq
@@ -28,7 +28,7 @@ namespace StormLibSharp.Native
 
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileCreateArchive(
-            [MarshalAs(UnmanagedType.LPTStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             uint dwCreateFlags,
             uint dwMaxFileCount,
             out MpqArchiveSafeHandle phMpq
@@ -36,7 +36,7 @@ namespace StormLibSharp.Native
 
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileCreateArchive2(
-            [MarshalAs(UnmanagedType.LPTStr)] string szMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szMpqName,
             ref SFILE_CREATE_MPQ pCreateInfo,
             out MpqArchiveSafeHandle phMpq
             );
@@ -108,7 +108,7 @@ namespace StormLibSharp.Native
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileOpenPatchArchive(
             MpqArchiveSafeHandle hMpq,
-            [MarshalAs(UnmanagedType.LPTStr)] string szPatchMpqName,
+            [MarshalAs(UnmanagedType.LPStr)] string szPatchMpqName,
             [MarshalAs(UnmanagedType.LPStr)] string szPatchPathPrefix,
             uint dwFlags
             );
@@ -227,7 +227,7 @@ namespace StormLibSharp.Native
         public static extern bool SFileExtractFile(
             MpqArchiveSafeHandle hMpq,
             [MarshalAs(UnmanagedType.LPStr)] string szToExtract,
-            [MarshalAs(UnmanagedType.LPTStr)] string szExtracted,
+            [MarshalAs(UnmanagedType.LPStr)] string szExtracted,
             uint dwSearchScope
             );
 
@@ -333,7 +333,7 @@ namespace StormLibSharp.Native
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileAddFileEx(
             MpqArchiveSafeHandle hMpq,
-            [MarshalAs(UnmanagedType.LPTStr)] string szFileName,
+            [MarshalAs(UnmanagedType.LPStr)] string szFileName,
             [MarshalAs(UnmanagedType.LPStr)] string szArchivedName,
             uint dwFlags,
             uint dwCompression,
@@ -343,7 +343,7 @@ namespace StormLibSharp.Native
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileAddFile(
             MpqArchiveSafeHandle hMpq,
-            [MarshalAs(UnmanagedType.LPTStr)] string szFileName,
+            [MarshalAs(UnmanagedType.LPStr)] string szFileName,
             [MarshalAs(UnmanagedType.LPStr)] string szArchivedName,
             uint dwFlags
             );
@@ -351,7 +351,7 @@ namespace StormLibSharp.Native
         [DllImport(STORMLIB, CallingConvention = CallingConvention.Winapi, ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         public static extern bool SFileAddWave(
             MpqArchiveSafeHandle hMpq,
-            [MarshalAs(UnmanagedType.LPTStr)] string szFileName,
+            [MarshalAs(UnmanagedType.LPStr)] string szFileName,
             [MarshalAs(UnmanagedType.LPStr)] string szArchivedName,
             uint dwFlags,
             uint dwQuality
